@@ -48,6 +48,7 @@ exports[`renders correctly 1`] = `
     <Text
       style={
         Object {
+          "fontSize": 16,
           "marginLeft": 10,
         }
       }
@@ -55,30 +56,28 @@ exports[`renders correctly 1`] = `
       Owner: 
       lambda
     </Text>
-    <Text
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "left": 450,
-          "position": "absolute",
-          "top": 689,
+          "marginLeft": "auto",
+          "marginRight": 10,
+          "marginTop": 5,
+          "opacity": 1,
         }
       }
     >
-      Stars(Star Gazers): 
-      0
-    </Text>
-    <Text
-      style={
-        Object {
-          "left": 450,
-          "position": "absolute",
-          "top": 709,
-        }
-      }
-    >
-      Fork Count: 
-      89
-    </Text>
+      <Text>
+        Remove Repo
+      </Text>
+    </View>
   </View>
   <Text
     style={
@@ -99,6 +98,26 @@ exports[`renders correctly 1`] = `
   >
     Pushed At: 
     26-dec-2018
+  </Text>
+  <Text
+    style={
+      Object {
+        "marginTop": 10,
+      }
+    }
+  >
+    Stars(Star Gazers): 
+    0
+  </Text>
+  <Text
+    style={
+      Object {
+        "marginTop": 10,
+      }
+    }
+  >
+    Fork Count: 
+    89
   </Text>
   <Text
     style={

@@ -21,6 +21,10 @@ export class Main extends React.Component {
     isModalVisble: false
   }
 
+  /**
+   * This method is responsible for determining what sorting action gets called
+   * based on the value passed to the Drop-down method
+   */
   sortMethod = (index, value) => {
     this.setState({sortValue: value}, () => {
       if (value === "Fork Count") {
@@ -35,26 +39,44 @@ export class Main extends React.Component {
     })
   }
 
+  /**
+   * This method toggles the modal visibility
+   */
   toggleModal = (value) => {
     this.setState({ isModalVisble: value })
   }
 
+  /**
+   * Listens for change on the input field for Repo Name
+   */
   onInputFieldRepoNameChange = (text) => {
     this.setState({ repoName: text })
   }
 
+  /**
+   * Listens for change on the input field for Repo description
+   */
   onInputFieldDescChange = (text) => {
     this.setState({ repoDesc: text })
   }
 
+  /**
+   * Listens for change on the input field for Repo Language
+   */
   onInputFieldLangChange = (text) => {
     this.setState({ repoLang: text })
   }
 
+  /**
+   * Listens for change on the input field for Owner name
+   */
   onInputFieldNameChange = (text) => {
     this.setState({ name: text })
   }
 
+  /**
+   * This method is responsible for adding a new repo to the existing repos
+   */
   addRepoToArray = () => {
     let newObj = {};
     const { name, repoName, repoDesc, repoLang, pushedAt } = this.state
@@ -80,6 +102,9 @@ export class Main extends React.Component {
     this.setState({ isModalVisble: false })
   }
 
+  /**
+   * This method handles the removal of existing repos
+   */
   onRemoveRepo = (index) => {
     this.props.removeRepo(index)
   }
@@ -100,7 +125,10 @@ export class Main extends React.Component {
           <Text>Add new repo</Text>
         </TouchableOpacity>
         </View>
-        <RepoDetails repository={this.props.repository} onRemoveRepo={this.onRemoveRepo} />
+        <RepoDetails
+          repository={this.props.repository}
+          onRemoveRepo={this.onRemoveRepo}
+          />
         {isModalVisble && (
           <Modal isVisible={isModalVisble} onBackdropPress={() => this.toggleModal(false)}>
             <KeyboardAvoidingView enabled behavior="padding">
